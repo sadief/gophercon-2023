@@ -1,9 +1,9 @@
 # Making Coffee without using concurrency
 Create a new folder for the project and add the code to create the coffee in three separate actions (functions!)
 
-`pwd cd goroutines`
+`pwd cd goroutines`{{exec}}
 
-`touch main.go`
+`touch main.go`{{exec}}
 
 ```
 package main
@@ -42,4 +42,4 @@ func SteamMilk() {
 
 Execute the program and see what happens
 
-`go run main.go`
+`go run main.go`{{exec}}
