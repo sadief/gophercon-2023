@@ -1,59 +1,45 @@
+# Making Coffee without using concurrency
+Create a new folder for the project and add the code to create the coffee in three separate actions (functions!)
 
-There is recognition for common languages in code blocks.
+`pwd cd goroutines`
 
-### Javascript
-```
-let var = 'good morning';
-alert(var);
-```
-
-### HTML
-```
-<!DOCTYPE HTML>
-<html>
-<body>
-  <p>This is very informative</p>
-</body>
-</html>
-```
-
-### Golang
+`touch main.go`
 
 ```
 package main
-import "fmt"
+
+import (
+	"log"
+	"time"
+)
+
 func main() {
-    fmt.Println("hello world")
+	start := time.Now()
+	PayForCoffee()
+	MakeEspresso()
+	SteamMilk()
+	log.Printf("Coffee made, 1 customer served")
+
+	timeTaken := time.Since(start)
+	log.Printf("Took %s to serve coffee", timeTaken)
+}
+
+func PayForCoffee() {
+	time.Sleep(2 * time.Second)
+	log.Printf("Coffee paid for 💰")
+}
+
+func MakeEspresso() {
+	time.Sleep(2 * time.Second)
+	log.Printf("Espresso made ☕️")
+}
+
+func SteamMilk() {
+	time.Sleep(2 * time.Second)
+	log.Printf("Milk steamed 🥛")
 }
 ```
 
-### YAML
+Execute the program and see what happens
 
-```
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-```
-
-### JSON
-
-```
-{
-    "apiVersion": "v1",
-    "kind": "Pod",
-    "metadata": {
-        "generateName": "weave-net-",
-        "labels": {
-            "name": "weave-net",
-            "pod-template-generation": "1"
-        },
-        "name": "weave-net-tntwq",
-        "namespace": "kube-system",
-    }
-}
-```
+`go run main.go`
