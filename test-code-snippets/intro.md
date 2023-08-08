@@ -1,0 +1,3 @@
+howTo() {
+    includeCode("snippets");
+}
