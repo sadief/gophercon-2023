@@ -15,6 +15,6 @@
       }
     },
     "backend": {
-      "imageid": "ubuntu"
+      "imageid": "editor"
     }
   }
