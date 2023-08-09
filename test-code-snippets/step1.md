@@ -1,7 +1,7 @@
 # Making Coffee without using concurrency
 Create a new folder for the project and add the code to create the coffee in three separate actions (functions!)
 
-`pwd && cd goroutines`{{exec}}
+`mkdir goroutines && cd goroutines`{{exec}}
 
 `touch main.go`{{exec}}
 
@@ -25,10 +25,11 @@ func main() {
 	timeTaken := time.Since(start)
 	log.Printf("Took %s to serve coffee", timeTaken)
 }
-```
+```{{copy}}
 
 Add the functions in
 
+```
 func PayForCoffee() {
 	time.Sleep(2 * time.Second)
 	log.Printf("Coffee paid for 💰")
