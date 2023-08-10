@@ -25,8 +25,7 @@ func main() {
 	http.HandleFunc("/serve-customer/", ServeCustomer)
 	http.ListenAndServe(":8080", nil)
 }
-```
-{{copy}}
+```{{copy}}
 
 2. Write the `ServeCustomer` function that will be called from the http request.
 This should loop through the number given as a parameter, and call the function to 'MakeCoffee'
