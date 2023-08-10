@@ -10,7 +10,8 @@ Where `3` is the parameter.
 
 > Adapt the main function to set up an http server using the Go `http` library
 
-```package main
+```
+package main
 
 import (
 	"log"
@@ -24,12 +25,14 @@ func main() {
 	http.HandleFunc("/serve-customer/", ServeCustomer)
 	http.ListenAndServe(":8080", nil)
 }
-```{{copy}}
+```
+{{copy}}
 
 2. Write the `ServeCustomer` function that will be called from the http request.
 This should loop through the number given as a parameter, and call the function to 'MakeCoffee'
 
-```func ServeCustomer(w http.ResponseWriter, r *http.Request) {
+```
+func ServeCustomer(w http.ResponseWriter, r *http.Request) {
 	start := time.Now()
 
 	numCustomers, err := strconv.Atoi(strings.TrimPrefix(r.URL.Path, "/serve-customer/"))
@@ -51,7 +54,8 @@ This should loop through the number given as a parameter, and call the function 
 
 3. Group our three functions into one parent function for easier use
 
-```func MakeCoffee() {
+```
+func MakeCoffee() {
 	PayForCoffee()
 	MakeEspresso()
 	SteamMilk()
