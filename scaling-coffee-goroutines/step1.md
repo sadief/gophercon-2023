@@ -15,7 +15,6 @@ Give each a two second delay and have them run one after the other.
 `mkdir goroutines && cd goroutines && touch main.go`{{exec}}
 
 > Navigate to the main.go file in the Editor tab and add the starter program code:
-Hint: It'll be under `filesystem/root/goroutines`
 
 ```
 package main
