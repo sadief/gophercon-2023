@@ -1,19 +1,20 @@
 # Making Coffee without using concurrency
 
-*Task:* Write a program that prints out a log for each coffee action:
+**Task:** Write a program that prints out a log for each coffee action:
 - Paying for the coffee
 - Making the espresso
 - Steaming the milk
 
 Give each a two second delay and have them run one after the other.
 
----
 
-Create a new folder for the project and add the code to create the coffee in three separate actions (functions!)
+**Steps**
+
+1. Create a new folder for the project and add the code to create the coffee in three separate actions (functions!)
 
 `mkdir goroutines && cd goroutines && touch main.go`{{exec}}
 
-Navigate to the main.go file in the Editor tab and add the starter program code:
+2. Navigate to the main.go file in the Editor tab and add the starter program code:
 Hint: It'll be under `filesystem/root/goroutines`
 
 ```
@@ -36,7 +37,7 @@ func main() {
 }
 ```{{copy}}
 
-Add the functions in
+3. Add the functions in (feel free to write your own or customize this however you see fit)
 
 ```
 func PayForCoffee() {
@@ -55,6 +56,6 @@ func SteamMilk() {
 }
 ```{{copy}}
 
-Execute the program and see what happens
+4. Execute the program and see what happens
 
 `go run main.go`{{exec}}
