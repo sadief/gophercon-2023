@@ -10,11 +10,11 @@ Give each a two second delay and have them run one after the other.
 
 **Steps**
 
-1. Create a new folder for the project and add the code to create the coffee in three separate actions (functions!)
+> Create a new folder for the project and add the code to create the coffee in three separate actions (functions!)
 
 `mkdir goroutines && cd goroutines && touch main.go`{{exec}}
 
-2. Navigate to the main.go file in the Editor tab and add the starter program code:
+> Navigate to the main.go file in the Editor tab and add the starter program code:
 Hint: It'll be under `filesystem/root/goroutines`
 
 ```
@@ -37,7 +37,7 @@ func main() {
 }
 ```{{copy}}
 
-3. Add the functions in (feel free to write your own or customize this however you see fit)
+> Add the functions in (feel free to write your own or customize this however you see fit)
 
 ```
 func PayForCoffee() {
@@ -56,6 +56,6 @@ func SteamMilk() {
 }
 ```{{copy}}
 
-4. Execute the program and see what happens
+> Execute the program and see what happens
 
-`go run main.go`{{exec}}
+`cd goroutines && go run main.go`{{exec}}
