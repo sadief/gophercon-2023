@@ -8,7 +8,7 @@ Where `3` is the parameter.
 
 **Steps**
 
-1. Adapt the main function to set up an http server using the Go `http` library
+> Adapt the main function to set up an http server using the Go `http` library
 
 ```package main
 
@@ -23,7 +23,8 @@ import (
 func main() {
 	http.HandleFunc("/serve-customer/", ServeCustomer)
 	http.ListenAndServe(":8080", nil)
-}```{{copy}}
+}
+```{{copy}}
 
 2. Write the `ServeCustomer` function that will be called from the http request.
 This should loop through the number given as a parameter, and call the function to 'MakeCoffee'
@@ -44,16 +45,18 @@ This should loop through the number given as a parameter, and call the function 
 
 	timeTaken := time.Since(start)
 	log.Printf("Took %s to serve coffee to %v customer(s)", timeTaken, count)
-}```{{copy}}
+}
+```{{copy}}
 
 
 3. Group our three functions into one parent function for easier use
 
-````func MakeCoffee() {
+```func MakeCoffee() {
 	PayForCoffee()
 	MakeEspresso()
 	SteamMilk()
-}`` {{{copy}}}
+}
+``` {{{copy}}}
 
 4.  Try hitting the endpoint
 
