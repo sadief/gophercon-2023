@@ -27,7 +27,7 @@ func main() {
 }
 ```{{copy}}
 
-2. Write the `ServeCustomer` function that will be called from the http request.
+> Write the `ServeCustomer` function that will be called from the http request.
 This should loop through the number given as a parameter, and call the function to 'MakeCoffee'
 
 ```
@@ -51,7 +51,7 @@ func ServeCustomer(w http.ResponseWriter, r *http.Request) {
 ```{{copy}}
 
 
-3. Group our three functions into one parent function for easier use
+> Group our three functions into one parent function for easier use
 
 ```
 func MakeCoffee() {
@@ -59,9 +59,9 @@ func MakeCoffee() {
 	MakeEspresso()
 	SteamMilk()
 }
-``` {{{copy}}}
+``` {{copy}}
 
-4.  Try hitting the endpoint
+>  Try hitting the endpoint
 
 `go run main.go`{{exec}} from folder root
 `curl http://localhost:8080/serve-customer/3`{{exec}} from new terminal window while server is running
