@@ -59,7 +59,7 @@ func MakeCoffee() {
 	MakeEspresso()
 	SteamMilk()
 }
-``` {{copy}}
+```{{copy}}
 
 >  Try hitting the endpoint
 
