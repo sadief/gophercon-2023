@@ -2,7 +2,7 @@
 
 **Task:** Adapt the program to accept an HTTP request with a parameter for the number of customers:
 
-eg. `curl http://localhost:8080/serve-customer/3'
+eg. `curl http://localhost:8080/serve-customer/3`
 
 Where `3` is the parameter.
 

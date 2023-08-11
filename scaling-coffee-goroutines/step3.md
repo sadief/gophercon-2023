@@ -10,3 +10,5 @@
 
 `go run main.go`{{exec}} from folder root
 `curl http://localhost:8080/serve-customer/3`{{exec}} from new terminal window while server is running
+
+The printout looks a bit sus doesn't it?
