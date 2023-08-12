@@ -1,4 +1,4 @@
-# Making Coffee without using concurrency
+# 1. Making Coffee without using concurrency
 
 **Task:** Write a program that prints out a log for each coffee action:
 - Paying for the coffee

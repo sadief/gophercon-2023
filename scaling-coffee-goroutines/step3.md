@@ -1,4 +1,4 @@
-# Use a Goroutine
+# 3. Use a Goroutine
 
 **Task:** Use a Goroutine to have `MakeCoffee` run at the same time for each of the 3 customers
 

@@ -1,4 +1,4 @@
-# Use a Waitgroup
+# 4. Use a Waitgroup
 
 **Task:** Use a WaitGroup so the function doesn't complete until each goroutine has finished
 

@@ -1,4 +1,4 @@
-# Add More Goroutines
+# 5. Add More Goroutines
 
 **Task:** Add goroutines to the sub-functions to improve the speed of MakeCoffee()
 
@@ -43,3 +43,5 @@ func SteamMilk(wg *sync.WaitGroup) {
 
 `go run main.go`{{exec}} from folder root
 `curl http://localhost:8080/serve-customer/3`{{exec}} from new terminal window while server is running
+
+> You can check the logs of the Docker container with `docker logs -f coffee-shop. You should see the printouts for each coffee action`

@@ -1,4 +1,4 @@
-# Serve More Coffee
+# 2. Serve More Coffee
 
 **Task:** Adapt the program to accept an HTTP request with a parameter for the number of customers:
 
