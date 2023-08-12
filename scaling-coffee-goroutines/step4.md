@@ -6,13 +6,13 @@
 
 `"sync"`{{copy}}
 
-> Initialize a WaitGroup instance
+> Initialize a WaitGroup instance within `ServeCustomer` ust before the loop
 
 `wg := sync.WaitGroup{}`{{copy}}
 
 > Inside the loop, before you call the goroutine, increment the waitgroup by 1
 
-`wg.Add(1)`
+`wg.Add(1)`{{copy}}
 
 > Add wg.Defer() to the MakeCoffee() function and take it in as a parameter
 
@@ -29,7 +29,13 @@ func MakeCoffee(wg *sync.WaitGroup) {
 
 `go MakeCoffee(&wg)`
 
+> Add the 'Wait' after the for loop so the function knows not to finish before the waitgroup has completed
+
+`wg.Wait()`
+
 > Now run the program again and check the printouts
 
 `go run main.go`{{exec}} from folder root
 `curl http://localhost:8080/serve-customer/3`{{exec}} from new terminal window while server is running
+
+You should be back in the "6 seconds" running time now as these actions are happening in parallel

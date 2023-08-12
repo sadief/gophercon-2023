@@ -44,4 +44,3 @@ func SteamMilk(wg *sync.WaitGroup) {
 `go run main.go`{{exec}} from folder root
 `curl http://localhost:8080/serve-customer/3`{{exec}} from new terminal window while server is running
 
-> You can check the logs of the Docker container with `docker logs -f coffee-shop. You should see the printouts for each coffee action`

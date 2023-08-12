@@ -1,51 +1,62 @@
-# 6. Deploy the program to kubernetes
+# 6. Run the program inside a Docker container
 
-**Task:** Set up a deployment file so we can deploy the Coffee program
+**Task:** Deploy the program inside a Docker container to prepare for using with Kubernetes
 
-> Create a new deployment file `touch deployment.yaml`
+> Create a Dockerfile inside your folder
 
-```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: coffee-shop
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      coffee-shop: web
-  template:
-    metadata:
-      labels:
-        coffee-shop: web
-    spec:
-      containers:
-      - name: coffee-shop
-        image: coffee-shop
-        imagePullPolicy: Never
-```{{copy}}
+`touch Dockerfile`
 
-> Add some new commands to the Makefile so we can easily deploy
+> Add these commands to build and run the coffee program
 
 ```
-deploy:	
-	kubectl apply -f deployment.yaml
+FROM golang:1.18.4-alpine
 
-delete-deployment:
-	kubectl delete -f deployment.yaml
+WORKDIR /app
 
-up: run deploy
+COPY go.mod ./
+RUN go mod download
 
-forward:
-	kubectl port-forward deployment/coffee-shop 8080:8080
+COPY *.go ./
 
-down: stop delete-deployment
+RUN go build -o /coffee-shop
+
+EXPOSE 8080
+
+CMD [ "/coffee-shop" ]
 ```{{copy}}
 
-> Boot up the deployment 
+> Create a Makefile for simpler commands
 
-`make up` from folder root to build docker image, run container, and deploy on k8's
-`make forward` to port forward so you can run the endpoint
-`curl http://localhost:8080/serve-customer/3` to hit endpoint on deployment
-`make down` to tear down deployment, stop container, and remove image
+`touch Makefile`
+
+> Add these commands to the Makefile to build, run, and stop the Docker container
+
+```
+build:
+	docker build --tag coffee-shop .
+
+run:	build
+	docker run -d --name coffee-shop -p 8080:8080 coffee-shop
+
+stop:	
+	docker stop coffee-shop
+	docker container rm coffee-shop
+```{{copy}}
+
+> Lastly, add a `go.mod` for dependency management
+
+`touch go.mod`
+
+> Add the following to the go.mod
+
+```
+module coffee-shop
+
+go 1.18
+```{{copy}}
+
+> Try building the image and running the container
+
+`make run` from folder root to build docker container
+`curl http://localhost:8080/serve-customer/3` from new terminal window while container is running
+`make stop` to stop container and remove image
