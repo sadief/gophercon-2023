@@ -27,11 +27,11 @@ func MakeCoffee(wg *sync.WaitGroup) {
 
 > Update where we call MakeCoffee() to take in the waitgroup pointer
 
-`go MakeCoffee(&wg)`
+`go MakeCoffee(&wg)`{{copy}}
 
 > Add the 'Wait' after the for loop so the function knows not to finish before the waitgroup has completed
 
-`wg.Wait()`
+`wg.Wait()`{{copy}}
 
 > Now run the program again and check the printouts
 

@@ -2,7 +2,7 @@
 
 **Task:** Set up a deployment file so we can deploy the Coffee program
 
-> Create a new deployment file `touch deployment.yaml`
+> Create a new deployment file `touch deployment.yaml`{{exec}}
 
 ```
 apiVersion: apps/v1
