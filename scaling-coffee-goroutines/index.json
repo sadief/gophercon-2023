@@ -32,6 +32,11 @@
         "text": "finish.md"
       }
     },
+    "assets": {
+      "host01": [
+        {"file": "../test", "target": "~/", "chmod": "+w"}
+      ]
+    },
     "backend": {
       "imageid": "kubernetes-kubeadm-2nodes"
     }
