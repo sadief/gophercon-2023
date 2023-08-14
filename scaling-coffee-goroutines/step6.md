@@ -4,7 +4,7 @@
 
 > Create a Dockerfile inside your folder
 
-`touch Dockerfile`{{exec}}
+`cd goroutines && touch Dockerfile`{{exec}}
 
 > Add these commands to build and run the coffee program
 
@@ -27,7 +27,7 @@ CMD [ "/coffee-shop" ]
 
 > Create a Makefile for simpler commands
 
-`touch Makefile`{{exec}}
+`cd goroutines && touch Makefile`{{exec}}
 
 > Add these commands to the Makefile to build, run, and stop the Docker container
 
@@ -45,7 +45,7 @@ stop:
 
 > Lastly, add a `go.mod` for dependency management
 
-`touch go.mod`{{exec}}
+`cd goroutines && touch go.mod`{{exec}}
 
 > Add the following to the go.mod
 
@@ -57,7 +57,10 @@ go 1.18
 
 > Try building the image and running the container
 
-`make run`{{exec}} from folder root to build docker container
+`cd goroutines && make run`{{exec}} from folder root to build docker container
+
 `curl http://localhost:8080/serve-customer/3`{{exec}} from new terminal window while container is running
+
+`docker logs -f coffee-shop`{{exec}} to check the logs
+
 `make stop`{{exec}} to stop container and remove image
-`docker logs -f coffee-shop` to check the logs

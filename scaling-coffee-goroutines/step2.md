@@ -23,6 +23,7 @@ import (
 
 func main() {
 	http.HandleFunc("/serve-customer/", ServeCustomer)
+	log.Printf("Coffee Shop Open")
 	http.ListenAndServe(":8080", nil)
 }
 ```{{copy}}
