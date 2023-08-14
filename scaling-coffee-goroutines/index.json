@@ -5,6 +5,9 @@
       "intro": {
         "text": "intro.md"
       },
+      "items": [
+        { "path": "../test" }
+      ],
       "steps": [
         {
           "text": "step1.md"
@@ -31,11 +34,6 @@
       "finish": {
         "text": "finish.md"
       }
-    },
-    "assets": {
-      "host01": [
-        {"file": "../test", "target": "~/", "chmod": "+w"}
-      ]
     },
     "backend": {
       "imageid": "kubernetes-kubeadm-2nodes"
