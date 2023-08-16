@@ -1,4 +1,4 @@
-# 6. Run the program inside a Docker container
+# 6. Containerize
 
 **Task:** Deploy the program inside a Docker container to prepare for using with Kubernetes
 
@@ -27,7 +27,7 @@ CMD [ "/coffee-shop" ]
 
 > Create a Makefile for simpler commands
 
-`cd goroutines && touch Makefile`{{exec}}
+`touch Makefile`{{exec}}
 
 > Add these commands to the Makefile to build, run, and stop the Docker container
 
@@ -45,7 +45,7 @@ stop:
 
 > Lastly, add a `go.mod` for dependency management
 
-`cd goroutines && touch go.mod`{{exec}}
+`touch go.mod`{{exec}}
 
 > Add the following to the go.mod
 
@@ -57,7 +57,7 @@ go 1.18
 
 > Try building the image and running the container
 
-`cd goroutines && make run`{{exec}} from folder root to build docker container
+`make run`{{exec}} from folder root to build docker container
 
 `curl http://localhost:8080/serve-customer/3`{{exec}} from new terminal window while container is running
 
