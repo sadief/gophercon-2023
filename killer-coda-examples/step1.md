@@ -57,6 +57,6 @@ func SteamMilk() {
 
 > Execute the program and see what happens
 
-`cd goroutines && go run main.go`{{exec}}
+`go run main.go`{{exec}}
 
 You should see a printout in the terminal of each action happening with the 2 second delay, and then a sum of the time it took.
