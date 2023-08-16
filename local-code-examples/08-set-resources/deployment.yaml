@@ -1,3 +1,4 @@
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: coffee-shop
@@ -16,3 +17,10 @@ spec:
       - name: coffee-shop
         image: coffee-shop
         imagePullPolicy: Never
+        resources:
+          limits:
+            cpu: 1m
+            memory: 10Mi
+          requests:
+            cpu: 1m
+            memory: 10Mi

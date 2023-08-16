@@ -6,12 +6,10 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"sync"
 )
 
 func main() {
 	http.HandleFunc("/serve-customer/", ServeCustomer)
-	log.Printf("Coffee Shop Open")
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -23,44 +21,33 @@ func ServeCustomer(w http.ResponseWriter, r *http.Request) {
 		numCustomers = 1
 	}
 
-	wg := sync.WaitGroup{}
 	count := 0
 	for i := 0; i < numCustomers; i++ {
-		wg.Add(1)
-		go MakeCoffee(&wg)
+		MakeCoffee()
 		count++
 	}
-	wg.Wait()
 
 	timeTaken := time.Since(start)
 	log.Printf("Took %s to serve coffee to %v customer(s)", timeTaken, count)
 }
 
-func MakeCoffee(wg *sync.WaitGroup) {
-	defer wg.Done()
-
-	newWg := sync.WaitGroup{}
-	newWg.Add(3)
-	go PayForCoffee(&newWg)
-	go MakeEspresso(&newWg)
-	go SteamMilk(&newWg)
-	newWg.Wait()
+func MakeCoffee() {
+	PayForCoffee()
+	MakeEspresso()
+	SteamMilk()
 }
 
-func PayForCoffee(wg *sync.WaitGroup) {
-	defer wg.Done()
+func PayForCoffee() {
 	time.Sleep(2 * time.Second)
 	log.Printf("Coffee paid for 💰")
 }
 
-func MakeEspresso(wg *sync.WaitGroup) {
-	defer wg.Done()
+func MakeEspresso() {
 	time.Sleep(2 * time.Second)
 	log.Printf("Espresso made ☕️")
 }
 
-func SteamMilk(wg *sync.WaitGroup) {
-	defer wg.Done()
+func SteamMilk() {
 	time.Sleep(2 * time.Second)
 	log.Printf("Milk steamed 🥛")
 }

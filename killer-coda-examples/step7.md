@@ -45,7 +45,10 @@ down: stop delete-deployment
 
 > Boot up the deployment 
 
-`make up` from folder root to build docker image, run container, and deploy on k8's
+`make up` from folder root to build docker image, run container, and deploy on k8's (remember to `make down` first if you haven't already so it tears down the old container)
+
 `make forward` to port forward so you can run the endpoint
+
 `curl http://localhost:8080/serve-customer/3` to hit endpoint on deployment
+
 `make down` to tear down deployment, stop container, and remove image
