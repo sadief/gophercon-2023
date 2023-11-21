@@ -1,50 +1,52 @@
 {
-    "title": "Gophercon 2023 - Scaling Coffee with Goroutines",
-    "description": "A beginner friendly guide to Goroutines, lets build a coffee shop together in this hands-on tutorial",
-    "details": {
-      "intro": {
-        "text": "intro.md"
-      },
-      "items": [
-        { "path": "../test" }
-      ],
-      "steps": [
-        {
-          "text": "step1.md"
-        },
-        {
-          "text": "step2.md"
-        },
-        {
-          "text": "step3.md"
-        },
-        {
-          "text": "step4.md"
-        },
-        {
-          "text": "step5.md"
-        },
-        {
-          "text": "step6.md"
-        },
-        {
-          "text": "step7.md"
-        },
-        {
-          "text": "step8.md"
-        },
-        {
-          "text": "step9.md"
-        },
-        {
-          "text": "step10.md"
-        }
-      ],
-      "finish": {
-        "text": "finish.md"
-      }
+  "title": "Scaling Coffee with Goroutines",
+  "description": "A beginner friendly guide to Goroutines, lets build a coffee shop together in this hands-on tutorial",
+  "details": {
+    "intro": {
+      "text": "intro.md"
     },
-    "backend": {
-      "imageid": "kubernetes-kubeadm-2nodes"
+    "items": [
+      {
+        "path": "../test"
+      }
+    ],
+    "steps": [
+      {
+        "text": "step1.md"
+      },
+      {
+        "text": "step2.md"
+      },
+      {
+        "text": "step3.md"
+      },
+      {
+        "text": "step4.md"
+      },
+      {
+        "text": "step5.md"
+      },
+      {
+        "text": "step6.md"
+      },
+      {
+        "text": "step7.md"
+      },
+      {
+        "text": "step8.md"
+      },
+      {
+        "text": "step9.md"
+      },
+      {
+        "text": "step10.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
     }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
   }
+}
